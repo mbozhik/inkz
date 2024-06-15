@@ -1,0 +1,16 @@
+---
+import {cn} from '../lib/utils'
+
+interface Props {
+  text: string
+  href?: any
+  variant?: 'primary' | 'secondary'
+  className?: string
+}
+
+const {text, href, variant = 'primary', className} = Astro.props
+---
+
+<a href={href ? href : ''} class={cn('bg-custom-gray w-fit text-lg px-5 py-2.5 rounded-[10px] border-2 border-transparent', variant == 'secondary' ? 'bg-transparent border-2 border-custbg-custom-gray' : '', className)}>
+  {text}
+</a>

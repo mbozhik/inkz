@@ -9,6 +9,11 @@ module.exports = {
       fontFamily: {
         sans: ['SuisseIntl', 'ui-sans-serif', 'system-ui', '-apple-system', 'Roboto', 'sans-serif'],
       },
+      colors: {
+        custom: {
+          gray: '#e5e5e5',
+        },
+      },
       fontWeight: {
         book: '450',
       },
