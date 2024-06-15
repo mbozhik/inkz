@@ -23,6 +23,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.3.3
     version: 3.4.1
+  vanilla-tilt:
+    specifier: ^1.8.1
+    version: 1.8.1
 
 packages:
 
@@ -3813,6 +3816,10 @@ packages:
       diff: 5.1.0
       kleur: 4.1.5
       sade: 1.8.1
+    dev: false
+
+  /vanilla-tilt@1.8.1:
+    resolution: {integrity: sha512-hPB1XUsnh+SIeVSW2beb5RnuFxz4ZNgxjGD78o52F49gS4xaoLeEMh9qrQnJrnEn/vjjBI7IlxrrXmz4tGV0Kw==}
     dev: false
 
   /vfile-location@4.1.0:
