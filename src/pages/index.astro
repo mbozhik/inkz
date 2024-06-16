@@ -5,9 +5,9 @@ import Button from '../components/Button.astro'
 import HeroTattooCard from '../components/HeroTattooCard.astro'
 
 const tattooBlock = {
-  last: '-mt-14 mt-0',
-  'pre-last': '-mt-2 mt-0',
-  center: 'mt-12 mt-0',
+  last: '-mt-14 sm:mt-0',
+  'pre-last': '-mt-2 sm:mt-0',
+  center: 'mt-12 sm:mt-0',
 }
 ---
 
@@ -15,24 +15,24 @@ const tattooBlock = {
   <main class="w-[90vw] mx-auto">
     <Header />
 
-    <section data-section="HERO" class="text-center mt-16">
+    <section data-section="HERO" class="text-center mt-28 xl:mt-10 sm:mt-14">
       <div class="space-y-7">
         <div class="space-y-4">
           <h1 class="text-center font-medium font-sans text-5xl tracking-tight">Команда <span class="underline">inkz</span> поможет вам <br /> не&nbsp;ошибиться в&nbsp;выборе тату мастера</h1>
 
-          <p class="text-2xl leading-none text-neutral-500">
-            Функционал нашего сервиса уже доступен <br />
+          <p class="text-2xl sm:text-lg sm:leading-tight leading-none text-neutral-500">
+            Функционал нашего сервиса уже доступен <br class="sm:hidden" />
             на нашей платформе
           </p>
         </div>
 
-        <div class="flex justify-center gap-3">
-          <Button text="Открыть ленту" />
-          <Button variant="secondary" text="Стать мастером" />
+        <div class="flex justify-center gap-3 sm:flex-col sm:gap-2">
+          <Button className="sm:w-full" text="Открыть ленту" />
+          <Button className="sm:w-full" variant="secondary" text="Стать мастером" />
         </div>
       </div>
 
-      <div class="flex gap-5 justify-center mt-44 sm:mt-14 sm:flex-col">
+      <div class="flex gap-5 justify-center mt-32 xl:mt-20 sm:mt-12 sm:flex-col">
         <HeroTattooCard className={tattooBlock.last} image="../../tribal-1.svg" nickname="@bozzhik" />
         <HeroTattooCard className={tattooBlock['pre-last']} image="../../tribal-2.svg" nickname="@bozzhik" />
         <HeroTattooCard className={`${tattooBlock.center} sm:hidden`} class:list={'sm:hidden'} image="../../tribal-1.svg" nickname="@bozzhik" />

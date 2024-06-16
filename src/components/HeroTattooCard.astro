@@ -10,7 +10,7 @@ interface Props {
 const {image, nickname, className} = Astro.props
 ---
 
-<div data-tattoo="card" class={cn('card purple relative p-5 pb-7 s-72 xl:s-64 sm:s-[90vw] rounded-xl transform-3d', className)}>
+<div data-tattoo="card" class={cn('card purple relative p-5 pb-7 s-72 xl:s-60 sm:s-[90vw] rounded-xl transform-3d', className)}>
   <div data-tattoo="sketch" class="h-full cursor-pointer relative transform-3d">
     <img data-tattoo="sketch-image" class="pointer-events-none opacity-100 absolute aspect-square s-full object-contain sneakers transform-3d" src={image} />
   </div>
