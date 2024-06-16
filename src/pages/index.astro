@@ -3,6 +3,12 @@ import Layout from '../layouts/Layout.astro'
 import Header from '../components/Header.astro'
 import Button from '../components/Button.astro'
 import HeroTattooCard from '../components/HeroTattooCard.astro'
+
+const tattooBlock = {
+  last: '-mt-14 mt-0',
+  'pre-last': '-mt-2 mt-0',
+  center: 'mt-12 mt-0',
+}
 ---
 
 <Layout>
@@ -26,7 +32,13 @@ import HeroTattooCard from '../components/HeroTattooCard.astro'
         </div>
       </div>
 
-      <HeroTattooCard />
+      <div class="flex gap-5 justify-center mt-44 sm:mt-14 sm:flex-col">
+        <HeroTattooCard className={tattooBlock.last} image="../../tribal-1.svg" nickname="@bozzhik" />
+        <HeroTattooCard className={tattooBlock['pre-last']} image="../../tribal-2.svg" nickname="@bozzhik" />
+        <HeroTattooCard className={`${tattooBlock.center} sm:hidden`} class:list={'sm:hidden'} image="../../tribal-1.svg" nickname="@bozzhik" />
+        <HeroTattooCard className={`${tattooBlock['pre-last']} sm:hidden`} class:list="sm:hidden" image="../../tribal-2.svg" nickname="@bozzhik" />
+        <HeroTattooCard className={`${tattooBlock.last} sm:hidden`} class:list="sm:hidden" image="../../tribal-1.svg" nickname="@bozzhik" />
+      </div>
     </section>
   </main>
 </Layout>
