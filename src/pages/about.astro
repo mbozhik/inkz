@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/Header.astro'
 
-const avatarStyles = 'h-32 overflow-hidden border-[4px] border-neutral-400 rounded-full hover:z-[50] hover:scale-105 duration-200'
+const avatarStyles = 'h-32 sm:h-[25vw] overflow-hidden border-[4px] border-neutral-400 rounded-full hover:z-[50] hover:scale-105 duration-200'
 ---
 
 <Layout>
@@ -10,9 +10,13 @@ const avatarStyles = 'h-32 overflow-hidden border-[4px] border-neutral-400 round
     <Header />
 
     <div class="mt-28 xl:mt-10 sm:mt-14 mb-44 sm:mb-28 space-y-52 sm:space-y-20">
-      <div class="grid w-full h-[50vh] place-items-center">
-        <section data-section="title" class="text-center space-y-7">
-          <h1 class="font-sans text-5xl font-medium tracking-tight text-center">Команда <span class="underline">inkz</span>:</h1>
+      <section data-section="HERO" class="text-center grid w-full h-[55vh] xl:h-[62.5vh] place-items-center">
+        <div class="space-y-10 sm:space-y-5">
+          <div class="space-y-2 sm:space-y-3">
+            <h1 class="font-sans text-5xl font-medium tracking-tight text-center">Кто такие INKZ?</h1>
+
+            <p class="text-2xl leading-none sm:text-lg sm:leading-tight text-neutral-500">Мы создаем медиа-сервис, который будет <br class="sm:hidden" /> помогать не ошибиться в выборе тату-мастера</p>
+          </div>
 
           <div class="flex mx-auto -space-x-4 w-fit avatars">
             <div class={avatarStyles}>
@@ -31,8 +35,8 @@ const avatarStyles = 'h-32 overflow-hidden border-[4px] border-neutral-400 round
               <img class="s-full" src="https://randomuser.me/api/portraits/women/0.jpg" alt="" />
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </main>
 </Layout>
