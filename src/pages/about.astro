@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+
+const avatarStyles = 'h-32 overflow-hidden border-[4px] border-neutral-400 rounded-full hover:z-[50] hover:scale-105 duration-200'
+---
+
+<Layout>
+  <main class="w-[90vw] mx-auto">
+    <Header />
+
+    <div class="mt-28 xl:mt-10 sm:mt-14 mb-44 sm:mb-28 space-y-52 sm:space-y-20">
+      <div class="grid w-full h-[50vh] place-items-center">
+        <section data-section="title" class="text-center space-y-7">
+          <h1 class="font-sans text-5xl font-medium tracking-tight text-center">Команда <span class="underline">inkz</span>:</h1>
+
+          <div class="flex mx-auto -space-x-4 w-fit avatars">
+            <div class={avatarStyles}>
+              <img class="s-full" src="https://randomuser.me/api/portraits/women/21.jpg" alt="" />
+            </div>
+
+            <div class={avatarStyles}>
+              <img class="s-full" src="https://randomuser.me/api/portraits/women/82.jpg" alt="" />
+            </div>
+
+            <div class={avatarStyles}>
+              <img class="s-full" src="https://randomuser.me/api/portraits/women/57.jpg" alt="" />
+            </div>
+
+            <div class={avatarStyles}>
+              <img class="s-full" src="https://randomuser.me/api/portraits/women/0.jpg" alt="" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .avatars div {
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+  }
+</style>
