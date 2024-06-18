@@ -15,7 +15,7 @@ const tattooBlock = {
   <main class="w-[90vw] mx-auto">
     <Header />
 
-    <div class="mt-28 xl:mt-10 sm:mt-14 mb-44 space-y-52">
+    <div class="mt-28 xl:mt-10 sm:mt-14 mb-44 sm:mb-28 space-y-52 sm:space-y-20">
       <section data-section="HERO" class="text-center">
         <div class="space-y-7">
           <div class="space-y-4">
@@ -35,7 +35,7 @@ const tattooBlock = {
 
         <div class="flex justify-center mt-32 gap-7 xl:mt-20 sm:mt-12 sm:flex-col">
           <HeroTattooCard className={tattooBlock.last} image="../../tribal-1.svg" nickname="@bozzhik" />
-          <HeroTattooCard className={tattooBlock['pre-last']} image="../../tribal-2.svg" nickname="@bozzhik" />
+          <HeroTattooCard className={`${tattooBlock['pre-last']} sm:hidden`} image="../../tribal-2.svg" nickname="@bozzhik" />
           <HeroTattooCard className={`${tattooBlock.center} sm:hidden`} class:list={'sm:hidden'} image="../../tribal-1.svg" nickname="@bozzhik" />
           <HeroTattooCard className={`${tattooBlock['pre-last']} sm:hidden`} class:list="sm:hidden" image="../../tribal-2.svg" nickname="@bozzhik" />
           <HeroTattooCard className={`${tattooBlock.last} sm:hidden`} class:list="sm:hidden" image="../../tribal-1.svg" nickname="@bozzhik" />
@@ -43,18 +43,18 @@ const tattooBlock = {
       </section>
 
       <section data-section="ABOUT" class="text-left">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between sm:flex-col-reverse sm:gap-5">
           <div class="space-y-5">
             <div class="space-y-3">
               <h1 class="font-sans text-5xl font-medium tracking-tight">Кто такие INKZ?</h1>
 
-              <p class="text-2xl sm:text-lg text-neutral-500 max-w-[50ch]">Мы — медиа-сервис, который объединяет тату-мастеров и людей, которые хотят сделать татуировку или найти идеи для эскизов</p>
+              <p class="text-2xl sm:text-lg text-neutral-500 max-w-[50ch] xl:max-w-[40ch]">Мы — медиа-сервис, который объединяет тату-мастеров и людей, которые хотят сделать татуировку или найти идеи для эскизов</p>
             </div>
 
-            <Button className="sm:w-full block" text="О нашей команде" />
+            <Button className="block sm:w-fit" text="О нашей команде" />
           </div>
 
-          <img class="object-contain w-[40%] rounded-[10px]" src="../../about.jpg" alt="" />
+          <img class="object-contain w-[40%] sm:w-full rounded-[10px]" src="../../about.jpg" alt="" />
         </div>
       </section>
     </div>
