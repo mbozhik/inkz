@@ -15,6 +15,8 @@ const {image, nickname, className} = Astro.props
     <img data-tattoo="sketch-image" class="absolute object-contain opacity-100 pointer-events-none aspect-square s-full sneakers transform-3d" src={image} />
   </div>
   <div data-tattoo="nickname" class="absolute bottom-0 text-white h-9 transform-3d">{nickname}</div>
+
+  <img class="absolute inset-0 z-20 w-full h-full" src="../../public/card_noise.png" alt="" />
 </div>
 
 <script>
@@ -27,7 +29,7 @@ const {image, nickname, className} = Astro.props
     max: 30,
     speed: 10000,
     glare: true,
-    'max-glare': 0.5,
+    'max-glare': 0.3,
     reverse: true,
     reset: false,
     scale: 1.05,
@@ -39,7 +41,7 @@ const {image, nickname, className} = Astro.props
     transform-style: preserve-3d;
   }
   [data-tattoo='card'] {
-    background: linear-gradient(135deg, #222, #000);
+    background: linear-gradient(135deg, #444, #000);
   }
 
   [data-tattoo='sketch-image'] {
