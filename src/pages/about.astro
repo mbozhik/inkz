@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/Header.astro'
 
-const avatarStyles = 'h-32 sm:h-[25vw] overflow-hidden border-[4px] border-neutral-400 rounded-full hover:z-[50] hover:scale-105 duration-200'
+const avatarStyles = 'h-32 sm:h-[25vw] overflow-hidden border-[4px] border-neutral-400 rounded-full hover:z-[50] hover:scale-105 duration-200 -mx-2.5 hover:mx-0'
 ---
 
 <Layout>
@@ -18,7 +18,7 @@ const avatarStyles = 'h-32 sm:h-[25vw] overflow-hidden border-[4px] border-neutr
             <p class="text-2xl leading-none sm:text-lg sm:leading-tight text-neutral-500">Мы создаем медиа-сервис, который будет <br class="sm:hidden" /> помогать не ошибиться в выборе тату-мастера</p>
           </div>
 
-          <div class="flex mx-auto -space-x-4 w-fit avatars">
+          <div class="flex mx-auto w-fit avatars">
             <div class={avatarStyles}>
               <img class="s-full" src="https://randomuser.me/api/portraits/women/21.jpg" alt="" />
             </div>
@@ -40,10 +40,3 @@ const avatarStyles = 'h-32 sm:h-[25vw] overflow-hidden border-[4px] border-neutr
     </div>
   </main>
 </Layout>
-
-<style>
-  .avatars div {
-    margin-left: -0.5em;
-    margin-right: -0.5em;
-  }
-</style>
