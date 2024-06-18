@@ -15,30 +15,48 @@ const tattooBlock = {
   <main class="w-[90vw] mx-auto">
     <Header />
 
-    <section data-section="HERO" class="text-center mt-28 xl:mt-10 sm:mt-14">
-      <div class="space-y-7">
-        <div class="space-y-4">
-          <h1 class="text-center font-medium font-sans text-5xl tracking-tight">Команда <span class="underline">inkz</span> поможет вам <br /> не&nbsp;ошибиться в&nbsp;выборе тату мастера</h1>
+    <div class="mt-28 xl:mt-10 sm:mt-14 mb-44 space-y-52">
+      <section data-section="HERO" class="text-center">
+        <div class="space-y-7">
+          <div class="space-y-4">
+            <h1 class="font-sans text-5xl font-medium tracking-tight text-center">Команда <span class="underline">inkz</span> поможет вам <br /> не&nbsp;ошибиться в&nbsp;выборе тату мастера</h1>
 
-          <p class="text-2xl sm:text-lg sm:leading-tight leading-none text-neutral-500">
-            Функционал нашего сервиса уже доступен <br class="sm:hidden" />
-            на нашей платформе
-          </p>
+            <p class="text-2xl leading-none sm:text-lg sm:leading-tight text-neutral-500">
+              Функционал нашего сервиса уже доступен <br class="sm:hidden" />
+              на нашей платформе
+            </p>
+          </div>
+
+          <div class="flex justify-center gap-3 sm:flex-col sm:gap-2">
+            <Button className="sm:w-full" text="Открыть ленту" />
+            <Button className="sm:w-full" variant="secondary" text="Стать мастером" />
+          </div>
         </div>
 
-        <div class="flex justify-center gap-3 sm:flex-col sm:gap-2">
-          <Button className="sm:w-full" text="Открыть ленту" />
-          <Button className="sm:w-full" variant="secondary" text="Стать мастером" />
+        <div class="flex justify-center mt-32 gap-7 xl:mt-20 sm:mt-12 sm:flex-col">
+          <HeroTattooCard className={tattooBlock.last} image="../../tribal-1.svg" nickname="@bozzhik" />
+          <HeroTattooCard className={tattooBlock['pre-last']} image="../../tribal-2.svg" nickname="@bozzhik" />
+          <HeroTattooCard className={`${tattooBlock.center} sm:hidden`} class:list={'sm:hidden'} image="../../tribal-1.svg" nickname="@bozzhik" />
+          <HeroTattooCard className={`${tattooBlock['pre-last']} sm:hidden`} class:list="sm:hidden" image="../../tribal-2.svg" nickname="@bozzhik" />
+          <HeroTattooCard className={`${tattooBlock.last} sm:hidden`} class:list="sm:hidden" image="../../tribal-1.svg" nickname="@bozzhik" />
         </div>
-      </div>
+      </section>
 
-      <div class="flex gap-5 justify-center mt-32 xl:mt-20 sm:mt-12 sm:flex-col">
-        <HeroTattooCard className={tattooBlock.last} image="../../tribal-1.svg" nickname="@bozzhik" />
-        <HeroTattooCard className={tattooBlock['pre-last']} image="../../tribal-2.svg" nickname="@bozzhik" />
-        <HeroTattooCard className={`${tattooBlock.center} sm:hidden`} class:list={'sm:hidden'} image="../../tribal-1.svg" nickname="@bozzhik" />
-        <HeroTattooCard className={`${tattooBlock['pre-last']} sm:hidden`} class:list="sm:hidden" image="../../tribal-2.svg" nickname="@bozzhik" />
-        <HeroTattooCard className={`${tattooBlock.last} sm:hidden`} class:list="sm:hidden" image="../../tribal-1.svg" nickname="@bozzhik" />
-      </div>
-    </section>
+      <section data-section="ABOUT" class="text-left">
+        <div class="flex items-center justify-between">
+          <div class="space-y-5">
+            <div class="space-y-3">
+              <h1 class="font-sans text-5xl font-medium tracking-tight">Кто такие INKZ?</h1>
+
+              <p class="text-2xl sm:text-lg text-neutral-500 max-w-[50ch]">Мы — медиа-сервис, который объединяет тату-мастеров и людей, которые хотят сделать татуировку или найти идеи для эскизов</p>
+            </div>
+
+            <Button className="sm:w-full block" text="О нашей команде" />
+          </div>
+
+          <img class="object-contain w-[40%] rounded-[10px]" src="../../about.jpg" alt="" />
+        </div>
+      </section>
+    </div>
   </main>
 </Layout>
