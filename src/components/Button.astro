@@ -11,6 +11,6 @@ interface Props {
 const {text, href, variant = 'primary', className} = Astro.props
 ---
 
-<a href={href ? href : ''} class={cn('bg-custom-gray w-fit text-lg px-5 py-2.5 rounded-[10px] border-2 border-transparent', variant == 'secondary' ? 'bg-transparent border-2 border-custbg-custom-gray' : '', className)}>
+<a href={href ? href : ''} class={cn('bg-black font-book text-white w-fit text-lg px-5 py-2.5 rounded-[10px] border-2 border-transparent hover:opacity-85 duration-200', variant == 'secondary' ? 'bg-transparent text-black border-2 border-black hover:opacity-70' : '', className)}>
   {text}
 </a>

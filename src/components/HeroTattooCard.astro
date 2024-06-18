@@ -11,10 +11,10 @@ const {image, nickname, className} = Astro.props
 ---
 
 <div data-tattoo="card" class={cn('card purple relative p-5 pb-7 s-72 xl:s-60 sm:s-[90vw] rounded-xl transform-3d', className)}>
-  <div data-tattoo="sketch" class="h-full cursor-pointer relative transform-3d">
-    <img data-tattoo="sketch-image" class="pointer-events-none opacity-100 absolute aspect-square s-full object-contain sneakers transform-3d" src={image} />
+  <div data-tattoo="sketch" class="relative h-full cursor-pointer transform-3d">
+    <img data-tattoo="sketch-image" class="absolute object-contain opacity-100 pointer-events-none aspect-square s-full sneakers transform-3d" src={image} />
   </div>
-  <div data-tattoo="nickname" class="h-9 text-white absolute bottom-0 transform-3d">{nickname}</div>
+  <div data-tattoo="nickname" class="absolute bottom-0 text-white h-9 transform-3d">{nickname}</div>
 </div>
 
 <script>
@@ -28,6 +28,9 @@ const {image, nickname, className} = Astro.props
     speed: 10000,
     glare: true,
     'max-glare': 0.5,
+    reverse: true,
+    reset: false,
+    scale: 1.05,
   })
 </script>
 
@@ -36,7 +39,7 @@ const {image, nickname, className} = Astro.props
     transform-style: preserve-3d;
   }
   [data-tattoo='card'] {
-    background: linear-gradient(135deg, #595959, #292929);
+    background: linear-gradient(135deg, #222, #000);
   }
 
   [data-tattoo='sketch-image'] {
