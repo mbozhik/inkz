@@ -1,4 +1,5 @@
 ---
+import YandexMetrika from '../components/YandexMetrika.astro'
 import Fonts from './Fonts.astro'
 
 interface Props {
@@ -38,6 +39,7 @@ const siteName = 'INKZ'
     <meta property="og:title" content={siteName + page_name} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/seo.png" />
+    <YandexMetrika />
   </head>
   <body class="font-sans">
     <slot />
