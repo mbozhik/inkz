@@ -57,7 +57,7 @@ const avatarStyles = {
                 .reverse()
                 .map((key) => (
                   <>
-                    <a href={aboutData[key].link} class={cn(avatarStyles.wrapper, 'sm:hidden')}>
+                    <a href={aboutData[key].link} target="_blank" class={cn(avatarStyles.wrapper, 'sm:hidden')}>
                       <img class={avatarStyles.image} src={aboutData[key].image} alt={`${key} ${aboutData[key].caption}`} />
                       <div class={cn(avatarStyles.caption)}>{aboutData[key].caption}</div>
                     </a>
