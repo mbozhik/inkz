@@ -78,8 +78,8 @@ const zagluskaMode = true
           <div class="flex justify-center gap-3">
             {
               Object.keys(headerData.socials).map((key) => (
-                <a target="_blank" href={headerData.socials[key].link}>
-                  <img class="object-contain s-16 sm:s-14 bg-black hover:bg-opacity-80 duration-200 rounded-[15px]" src={headerData.socials[key].content} alt="" />
+                <a target="_blank" href={headerData.socials[key].link} class="bg-black hover:bg-opacity-80 duration-200 rounded-[15px]">
+                  <img class={`object-contain s-16 sm:s-14 ${key === 'inst' ? 'blur-[2.5px]' : ''}`} src={headerData.socials[key].content} alt="" />
                 </a>
               ))
             }

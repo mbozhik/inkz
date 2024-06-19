@@ -22,25 +22,31 @@ export const headerData = {
       link: 'https://vc.ru/u/3296881-stanislava-shestakova',
       content: '../../socials/vc-ru.svg',
     },
+    inst: {
+      link: 'https://www.instagram.com/inkz_tattoo_/',
+      content: '../../socials/inst.svg',
+    },
   },
 }
 ---
 
-<header class="flex items-center justify-between mx-auto text-2xl sm:gap-5 w-container my-7 lg:text-xl md:text-base sm:text-xl tracking-small">
+<header class="flex items-center justify-between mx-auto text-2xl sm:gap-5 w-container my-7 sm:mt-4 lg:text-xl md:text-base sm:text-xl tracking-small">
   <a href={headerData.main.link} class="h-10 sm:h-8">
     <img class="object-contain s-full" src={headerData.main.content} alt="" />
   </a>
 
-  <div class="flex items-center gap-5">
+  <div class="flex items-center gap-5 sm:gap-3">
     <a class="font-book" href={headerData.about.content}>{headerData.about.content}</a>
 
-    <div class="flex gap-1.5 sm:hidden">
+    <div class="flex gap-1.5">
       {
-        Object.keys(headerData.socials).map((key) => (
-          <a target="_blank" href={headerData.socials[key].link}>
-            <img class="object-contain s-10 bg-black hover:bg-opacity-80 duration-200 rounded-[10px]" src={headerData.socials[key].content} alt="" />
-          </a>
-        ))
+        Object.keys(headerData.socials)
+          .slice(0, 2)
+          .map((key) => (
+            <a target="_blank" href={headerData.socials[key].link}>
+              <img class="object-contain s-10 bg-black hover:bg-opacity-80 duration-200 rounded-[10px]" src={headerData.socials[key].content} alt="" />
+            </a>
+          ))
       }
     </div>
   </div>
