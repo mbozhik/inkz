@@ -29,7 +29,7 @@ export default function HeroAction() {
   }
 
   const formElemStyles = {
-    default: 'w-fit text-lg font-book px-5 py-2.5 rounded-[10px] border-2 duration-200',
+    default: 'w-fit sm:w-full text-lg font-book px-5 py-2.5 rounded-[10px] border-2 duration-200',
     solid: 'bg-black text-white border-transparent hover:opacity-85 ',
     outline: 'bg-transparent text-black placeholder:text-black border-2 border-black hover:opacity-70',
   }

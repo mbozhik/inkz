@@ -31,10 +31,10 @@ export const headerData = {
     <img class="object-contain s-full" src={headerData.main.content} alt="" />
   </a>
 
-  <div class="flex gap-5 items-center">
+  <div class="flex items-center gap-5">
     <a class="font-book" href={headerData.about.content}>{headerData.about.content}</a>
 
-    <div class="flex gap-1.5">
+    <div class="flex gap-1.5 sm:hidden">
       {
         Object.keys(headerData.socials).map((key) => (
           <a target="_blank" href={headerData.socials[key].link}>
