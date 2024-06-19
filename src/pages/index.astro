@@ -4,6 +4,8 @@ import Header from '../components/Header.astro'
 import Button from '../components/Button.astro'
 import HeroTattooCard from '../components/HeroTattooCard.astro'
 
+import {headerData} from '../components/Header.astro'
+
 const tattooBlock = {
   last: '-mt-14 sm:mt-0',
   'pre-last': '-mt-2 sm:mt-0',
@@ -55,6 +57,24 @@ const tattooBlock = {
           </div>
 
           <img class="object-contain w-[40%] sm:w-full rounded-[10px]" src="../../about.jpg" alt="" />
+        </div>
+      </section>
+
+      <section data-section="COMMUNITY" class="text-center">
+        <div class="space-y-7">
+          <div class="space-y-4">
+            <h1 class="font-sans text-5xl font-medium tracking-tight text-center">Присоединяйся <br /> к нашему сообществу</h1>
+          </div>
+
+          <div class="flex gap-3 justify-center">
+            {
+              Object.keys(headerData.socials).map((key) => (
+                <a target="_blank" href={headerData.socials[key].link}>
+                  <img class="object-contain s-16 bg-black hover:bg-opacity-80 duration-200 rounded-[15px]" src={headerData.socials[key].content} alt="" />
+                </a>
+              ))
+            }
+          </div>
         </div>
       </section>
     </div>

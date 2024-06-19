@@ -1,5 +1,5 @@
 ---
-const headerData = {
+export const headerData = {
   main: {
     link: '/',
     content: '../../logo.png',
@@ -24,7 +24,6 @@ const headerData = {
     },
   },
 }
-const socialIconStyles = 'object-contain s-10 bg-black hover:bg-opacity-80 duration-200 rounded-[10px]'
 ---
 
 <header class="flex items-center justify-between mx-auto text-2xl sm:gap-5 w-container my-7 lg:text-xl md:text-base sm:text-xl tracking-small">
@@ -39,7 +38,7 @@ const socialIconStyles = 'object-contain s-10 bg-black hover:bg-opacity-80 durat
       {
         Object.keys(headerData.socials).map((key) => (
           <a target="_blank" href={headerData.socials[key].link}>
-            <img class={socialIconStyles} src={headerData.socials[key].content} alt="" />
+            <img class="object-contain s-10 bg-black hover:bg-opacity-80 duration-200 rounded-[10px]" src={headerData.socials[key].content} alt="" />
           </a>
         ))
       }
