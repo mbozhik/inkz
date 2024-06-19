@@ -11,7 +11,7 @@ interface Props {
 
 const {page_name = '', description, page_path = '', keywords = ''} = Astro.props
 
-const siteName = 'INKZ'
+const siteName = 'inkz'
 ---
 
 <!doctype html>
@@ -21,6 +21,10 @@ const siteName = 'INKZ'
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/x-icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)" />
+
     <title>{siteName + page_name}</title>
     <meta name="title" content={siteName + page_name} />
     <meta name="description" content={description} />
@@ -29,13 +33,13 @@ const siteName = 'INKZ'
     <meta name="author" content={siteName} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content=`https://инкз.рф/${page_path}` />
+    <meta property="og:url" content=`https://inkz.bozzhik.ru/${page_path}` />
     <meta property="og:title" content={siteName + page_name} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/seo.png" />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content=`https://инкз.рф/${page_path}` />
+    <meta property="twitter:url" content=`https://inkz.bozzhik.ru/${page_path}` />
     <meta property="og:title" content={siteName + page_name} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/seo.png" />
