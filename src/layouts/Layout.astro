@@ -39,7 +39,7 @@ const siteName = 'INKZ'
     <meta property="og:title" content={siteName + page_name} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/seo.png" />
-    <YandexMetrika />
+    {process.env.NODE_ENV === 'production' && <YandexMetrika />}
   </head>
   <body class="font-sans">
     <slot />
