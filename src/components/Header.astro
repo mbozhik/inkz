@@ -1,7 +1,48 @@
+---
+const headerData = {
+  main: {
+    link: '/',
+    content: '../../logo.png',
+  },
+  about: {
+    link: '/about',
+    content: 'О проекте',
+  },
+
+  socials: {
+    vk: {
+      link: 'https://vk.com/inkztattoo',
+      content: '../../socials/vk.svg',
+    },
+    dzen: {
+      link: 'https://dzen.ru/id/6578c9cd5b0e751ba7c54f27',
+      content: '../../socials/dzen.svg',
+    },
+    'vc-ru': {
+      link: 'https://vc.ru/u/3296881-stanislava-shestakova',
+      content: '../../socials/vc-ru.svg',
+    },
+  },
+}
+const socialIconStyles = 'object-contain s-10 bg-black hover:bg-opacity-80 duration-200 rounded-[10px]'
+---
+
 <header class="flex items-center justify-between mx-auto text-2xl sm:gap-5 w-container my-7 lg:text-xl md:text-base sm:text-xl tracking-small">
-  <a href="/" class="h-10 sm:h-8">
-    <img class="object-contain s-full" src="../../logo.png" alt="" />
+  <a href={headerData.main.link} class="h-10 sm:h-8">
+    <img class="object-contain s-full" src={headerData.main.content} alt="" />
   </a>
 
-  <a class="font-book" href="/about">О проекте</a>
+  <div class="flex gap-5 items-center">
+    <a class="font-book" href={headerData.about.content}>{headerData.about.content}</a>
+
+    <div class="flex gap-1.5">
+      {
+        Object.keys(headerData.socials).map((key) => (
+          <a target="_blank" href={headerData.socials[key].link}>
+            <img class={socialIconStyles} src={headerData.socials[key].content} alt="" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </header>
