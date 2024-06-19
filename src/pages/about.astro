@@ -5,35 +5,36 @@ import {cn} from '../lib/utils'
 
 const aboutData = {
   bozzhik: {
-    link: '',
-    image: '../../public/about/bozzhik.jpg',
+    link: 'https://bozzhik.ru/',
+    image: '../../about/bozzhik.jpg',
     caption: 'Фронтенд-разработчик',
   },
   stasia: {
-    link: '',
-    image: '../../public/about/stasia.jpg',
+    link: 'https://t.me/stanislavasal',
+    image: '../../about/stasia.jpg',
     caption: 'Дизайнер продукта',
   },
   zakharday: {
-    link: '',
-    image: '../../public/about/zakharday.jpg',
+    link: 'https://t.me/dayglobal',
+    image: '../../about/zakharday.jpg',
     caption: 'Куратор по коду',
   },
   vadim: {
-    link: '',
-    image: '../../public/about/vadim.jpg',
+    link: 'https://t.me/m1d45',
+    image: '../../about/vadim.jpg',
     caption: 'Куратор по дизайну',
   },
   dima: {
-    link: '',
-    image: '../../public/about/dima.jpg',
+    link: 'https://t.me/dmalex_brf',
+    image: '../../about/dima.jpg',
     caption: 'Куратор по коду',
   },
 }
 
 const avatarStyles = {
-  wrapper: 'group relative h-32 sm:h-[25vw]  hover:z-[50] hover:scale-105 duration-200 -mx-2.5 hover:mx-0',
+  wrapper: 'group relative h-32 sm:h-[23vw] hover:z-[50] hover:scale-105 duration-200 -mx-2.5 hover:mx-0',
   image: 'overflow-hidden rounded-full border-[4px] border-[#222] s-full',
+  caption: 'absolute bg-black text-white leading-[1.10] rounded-md px-2 py-2 w-full opacity-0 group-hover:opacity-100 -bottom-[60px] left-0 s-fit sm:-bottom-16 sm:text-xs sm:leading-none',
 }
 ---
 
@@ -45,19 +46,32 @@ const avatarStyles = {
       <section data-section="HERO" class="text-center grid w-full h-[55vh] xl:h-[62.5vh] place-items-center">
         <div class="space-y-10 sm:space-y-5">
           <div class="space-y-2 sm:space-y-3">
-            <h1 class="font-sans text-5xl font-medium tracking-tight text-center">Кто такие INKZ?</h1>
+            <h1 class="font-sans text-5xl font-medium tracking-tight text-center sm:text-4xl">Кто такие <span class="underline">inkz</span>?</h1>
 
             <p class="text-2xl leading-none sm:text-lg sm:leading-tight text-neutral-500">Мы создаём удобный и информативный сервис, который <br class="sm:hidden" /> поможет вам найти идеального тату-мастера.</p>
           </div>
 
-          <div class="flex mx-auto w-fit">
+          <div class="flex flex-row-reverse mx-auto w-fit">
             {
-              Object.keys(aboutData).map((key) => (
-                <a href={aboutData[key].link} class={avatarStyles.wrapper}>
-                  <img class={avatarStyles.image} src={aboutData[key].image} alt={`${key} ${aboutData[key].caption}`} />
-                  <mark class="absolute bg-black text-white leading-[1.10] rounded-md px-2 py-2 w-full opacity-0 group-hover:opacity-100 -bottom-[58px] left-0 s-fit">{aboutData[key].caption}</mark>
-                </a>
-              ))
+              Object.keys(aboutData)
+                .reverse()
+                .map((key) => (
+                  <>
+                    <a href={aboutData[key].link} class={cn(avatarStyles.wrapper, 'sm:hidden')}>
+                      <img class={avatarStyles.image} src={aboutData[key].image} alt={`${key} ${aboutData[key].caption}`} />
+                      <div class={cn(avatarStyles.caption)}>{aboutData[key].caption}</div>
+                    </a>
+
+                    <div class={cn(avatarStyles.wrapper, 'hidden sm:block')}>
+                      <img class={avatarStyles.image} src={aboutData[key].image} alt={`${key} ${aboutData[key].caption}`} />
+
+                      <div onclick={`window.location.href = '${aboutData[key].link}';`} class={avatarStyles.caption}>
+                        {aboutData[key].caption}
+                        <h1 class="mt-1.5 sm:underline">Ссылка</h1>
+                      </div>
+                    </div>
+                  </>
+                ))
             }
           </div>
         </div>
