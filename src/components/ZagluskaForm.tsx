@@ -12,23 +12,39 @@ export default function HeroAction() {
 
     setIsChecked(true)
 
-    try {
-      const GOOGLE_SHEET_SCRIPT = 'https://script.google.com/macros/s/AKfycbwUasSXqEIHl6T7q9t8i5Ag7WpYZlFPVAPhQqNBDHTkv0yZsUQZ8qY9tEeT0u4l4Gmh/exec'
+    const sendData = async () => {
+      const data = {
+        email,
+      }
 
-      const formdata = new FormData()
-      formdata.append('Email', email)
-      const response = await axios.post(GOOGLE_SHEET_SCRIPT, formdata)
+      const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbx2tMsuPmmtzlUCs0BcfBBDL42yY3A7rNorD7IE5rNZ-mEOK779yyUerfzbGS8MDm4H/exec'
 
-      console.log('Submitted email:', email)
-      console.log('Response data:', response.data)
+      try {
+        const response = await fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          body: JSON.stringify(data),
+        })
 
-      setIsSubmitted(true)
-      setTimeout(() => {
-        setIsSubmitted(false)
-      }, 2000)
-    } catch (error) {
-      console.log('Error:', error)
+        if (!response.ok) {
+          throw new Error('Failed to send data')
+        }
+
+        const responseData = await response.json()
+        console.log('Response Data:', responseData)
+
+        setIsSubmitted(true)
+        setTimeout(() => {
+          setIsSubmitted(false)
+        }, 2000)
+      } catch (error) {
+        console.error('Error:', error)
+      }
     }
+
+    sendData()
   }
 
   const formElemStyles = {
