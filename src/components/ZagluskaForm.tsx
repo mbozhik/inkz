@@ -40,19 +40,19 @@ export default function HeroAction() {
   return (
     <form className="mt-7 space-y-2.5">
       {isSubmitted ? (
-        <div className={cn(formElemStyles.default, formElemStyles.solid, 'mx-auto')}>Отправлено!</div>
+        <div className={cn(formElemStyles.default, formElemStyles.solid, 'mx-auto')}>отправлено!</div>
       ) : (
         <div className="flex justify-center gap-2 sm:flex-col sm:gap-2">
-          <input className={cn(formElemStyles.default, formElemStyles.outline)} type="text" placeholder="Введите e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input className={cn(formElemStyles.default, formElemStyles.outline)} type="text" placeholder="введите e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
           <button className={cn(formElemStyles.default, formElemStyles.solid)} onClick={handleSubmit}>
-            Отправить
+            отправить
           </button>
         </div>
       )}
 
       <div className="flex items-center justify-center gap-2">
         <input className="accent-black" type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} />
-        <label className="text-sm">Даю согласие на обработку персональных данных</label>
+        <label className="text-sm">даю согласие на обработку персональных данных</label>
       </div>
     </form>
   )
