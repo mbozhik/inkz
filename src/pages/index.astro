@@ -20,9 +20,9 @@ const zagluskaMode = true
   <main class="w-[90vw] mx-auto tracking-tighter">
     <Header />
 
-    <div class="mt-28 xl:mt-10 sm:mt-14 mb-44 sm:mb-28 space-y-52 sm:space-y-20">
+    <div class="mt-24 xl:mt-10 sm:mt-14 mb-44 sm:mb-28 space-y-52 sm:space-y-20">
       <section data-section="HERO" class="text-center">
-        <div class="space-y-7">
+        <div>
           <div class="space-y-4">
             <h1 class="font-sans text-5xl font-medium text-center">Команда <span class="underline">inkz</span> поможет вам <br /> не&nbsp;ошибиться в&nbsp;выборе тату мастера</h1>
 
@@ -44,7 +44,7 @@ const zagluskaMode = true
           }
         </div>
 
-        <div class="flex justify-center mt-32 gap-7 xl:mt-20 sm:mt-12 sm:flex-col">
+        <div class="flex justify-center mt-28 gap-7 xl:mt-20 sm:mt-12 sm:flex-col">
           <HeroTattooCard className={tattooBlock.last} image="../../hero-tattoo-tribals/tribal-2.svg" nickname="@bozzhik" />
           <HeroTattooCard className={`${tattooBlock['pre-last']} sm:hidden`} image="../../hero-tattoo-tribals/tribal-4.svg" nickname="@bozzhik" />
           <HeroTattooCard className={`${tattooBlock.center} sm:hidden`} class:list={'sm:hidden'} image="../../hero-tattoo-tribals/tribal-1.svg" nickname="@bozzhik" />

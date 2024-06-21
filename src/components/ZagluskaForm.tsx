@@ -5,9 +5,12 @@ import axios from 'axios'
 export default function HeroAction() {
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isChecked, setIsChecked] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    setIsChecked(true)
 
     try {
       const GOOGLE_SHEET_SCRIPT = 'https://script.google.com/macros/s/AKfycbwUasSXqEIHl6T7q9t8i5Ag7WpYZlFPVAPhQqNBDHTkv0yZsUQZ8qY9tEeT0u4l4Gmh/exec'
@@ -35,7 +38,7 @@ export default function HeroAction() {
   }
 
   return (
-    <form className="mt-7">
+    <form className="mt-7 space-y-2.5">
       {isSubmitted ? (
         <div className={cn(formElemStyles.default, formElemStyles.solid, 'mx-auto')}>Отправлено!</div>
       ) : (
@@ -46,6 +49,11 @@ export default function HeroAction() {
           </button>
         </div>
       )}
+
+      <div className="flex items-center justify-center gap-2">
+        <input className="accent-black" type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} />
+        <label className="text-sm">Даю согласие на обработку персональных данных</label>
+      </div>
     </form>
   )
 }
